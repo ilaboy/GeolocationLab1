@@ -7,3 +7,12 @@ html, body, #map {
 height: 100%;
 width: 100vw;
 }
+
+.info {
+			padding: 6px 6px;
+			font: 12px/14px Calibri, Garamond, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 5px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
