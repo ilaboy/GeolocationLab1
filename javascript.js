@@ -17,7 +17,6 @@ var dark = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?
 
 var map = L.map('map', {layers:[light]}).fitWorld();
 
-// control that shows info in the white info box in the top right
 var info = L.control();
 
   info.onAdd = function (map) {
@@ -27,7 +26,7 @@ var info = L.control();
   };
 
   info.update = function (props) {
-    this._div.innerHTML = '<h4>Find Your Location</h4>' +  ('This app will not record your location at any moment!');
+    this._div.innerHTML = ('This app will not record your location!');
   };
 
   info.addTo(map);
