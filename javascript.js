@@ -74,10 +74,19 @@ var baseMaps = {
   "Light": light,
   "Dark": dark
 };
+
 L.control.layers(baseMaps).addTo(map);
 
-var helloPopup = L.popup().setContent('You are here!');
+var stateChangingButton = L.easyButton({
+    states: [{
+            stateName: 'zoom-to-forest',        // name the state
+            icon:      'fa-tree',               // and define its properties
+            title:     'zoom to a forest',      // like its title
+            onClick: function(btn, map) {       // and its callback
+                map.locate({setView: true, maxZoom: 16});
+                btn.state('zoom-to-school');    // change state on click!
+            }
+    }]
+});
 
-L.easyButton('fa-globe', function(btn, map){
-    helloPopup.setLatLng(map.getCenter()).openOn(map);
-}).addTo(map);
+stateChangingButton.addTo(map);
